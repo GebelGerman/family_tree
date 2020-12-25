@@ -89,3 +89,30 @@ class Database(metaclass=DatabaseMeta):
             # print(result)
         self.connection.commit()
         return Database.to_table_view(result)
+    
+    def select_other_surname_person(self, person_id):
+        with self.connection.cursor() as cursor:
+            sql = """SELECT other_surname, other_name, surname_and_name_after_baptism, yard_nicknames
+                        FROM other_surname WHERE idPerson = %s""" % person_id
+            print(sql)
+            cursor.execute(sql)
+            result = cursor.fetchall()
+            print(result)
+        self.connection.commit()
+        return Database.to_table_view(result)
+
+    def save_other_surname(self, data, person_id, update):
+        print(data, person_id)
+        with self.connection.cursor() as cursor:
+            if update:
+                sql = """UPDATE other_surname SET other_surname = %s, other_name = %s, 
+                            urname_and_name_after_baptism = %s, yard_nicknames = %s WHERE idPerson = %s""" % (data[0], data[1], data[2], data[3], str(person_id))
+            else:
+                 sql = """INSERT INTO other_surname (idPerson, other_surname, other_name, surname_and_name_after_baptism, yard_nicknames)
+                            VALUES (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\')""" % (str(person_id), data[0], data[1], data[2], data[3])
+            print(sql)
+            cursor.execute(sql)
+            result = cursor.fetchall()
+            print(result)
+        self.connection.commit()
+        return Database.to_table_view(result)

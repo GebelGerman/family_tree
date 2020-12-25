@@ -1,3 +1,4 @@
+from App.full_person_info_app import Full_Person_Info_Form
 from Database.db import Database
 from PyQt5 import QtWidgets, Qt
 from PyQt5.QtCore import pyqtSignal, pyqtSlot
@@ -72,11 +73,13 @@ class Main_App(QtWidgets.QMainWindow, main_window.Ui_MainWindow):
     def get_id(self):
         row = self.tableWidget.currentRow()
         col = 0
+        print(row)
         return self.tableWidget.item(row, col).text()
     
     def show_full_person_info(self):
         id = self.get_id()
-        pass
+        self.full_person_info_form = Full_Person_Info_Form(id)
+        self.full_person_info_form.show()
 
     def update_row_data(self):
         id = self.get_id()

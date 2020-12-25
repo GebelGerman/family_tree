@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>926</width>
-    <height>846</height>
+    <height>349</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>30</y>
+     <y>20</y>
      <width>371</width>
      <height>41</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QRadioButton" name="update_rb">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>50</y>
+     <x>740</x>
+     <y>40</y>
      <width>131</width>
      <height>20</height>
     </rect>
@@ -39,11 +39,14 @@
     <string>Изменять данные</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="update_button">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>790</y>
+     <x>780</x>
+     <y>280</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -52,11 +55,14 @@
     <string>Обновить</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="save_button">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>680</x>
-     <y>790</y>
+     <x>670</x>
+     <y>280</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -69,10 +75,61 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>80</y>
+     <y>121</y>
      <width>851</width>
-     <height>691</height>
+     <height>141</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>80</y>
+     <width>431</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Выберете данные</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Другие фамилии\имена</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Характеристики</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Условия проживания</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Места проживания</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="show_button">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>77</y>
+     <width>93</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Показать</string>
    </property>
   </widget>
  </widget>
