@@ -1,0 +1,7 @@
+Скопировать всё, что ниже и вставить в терминал 
+
+
+pyuic5 forms/xml/add_person.ui -o forms/add_person.py
+pyuic5 forms/xml/main_window.ui -o forms/main_window.py
+pyuic5 forms/xml/sort.ui -o forms/sort.py
+pyuic5 forms/xml/search.ui -o forms/search.py
